@@ -1,0 +1,16 @@
+# Render Blueprint for Fantasy Front Office
+# Render reads this file when you choose New > Blueprint and pick this repository.
+services:
+  - type: web
+    name: fantasy-front-office
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: ./
+    healthCheckPath: /api/status
+    autoDeployTrigger: commit
+    envVars:
+      # Render asks you for the value when you create the Blueprint.
+      # Leave it blank to run without the AI features.
+      - key: ANTHROPIC_API_KEY
+        sync: false
