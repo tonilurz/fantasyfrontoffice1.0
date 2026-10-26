@@ -1,0 +1,6 @@
+# Never upload your API key
+.env
+# League save data from local runs
+data/
+node_modules/
+*.zip
